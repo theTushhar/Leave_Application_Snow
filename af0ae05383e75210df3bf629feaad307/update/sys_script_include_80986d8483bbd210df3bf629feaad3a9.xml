@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1607066_leave_mn.GetHRManagers</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>GetHRManagers</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var GetHRManagers = Class.create();
+GetHRManagers.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+    getUserManagerOrHR: function() {
+        var userId = this.getParameter('sysparm_user_id');
+        if (!userId) {
+            gs.warn("⚠️ No user ID provided.");
+            return "";
+        }
+
+        // 1️⃣ Try to get the user's direct manager (sys_id)
+        var userGR = new GlideRecord('sys_user');
+        if (userGR.get(userId) && userGR.manager) {
+            var managerSysId = userGR.manager.toString(); // Get sys_id of the manager
+            gs.info(`✅ Manager found for User: ${managerSysId}`);
+            return managerSysId;
+        }
+
+        // 2️⃣ If no manager, get first HR Manager (sys_id)
+        var hrGR = new GlideRecord('sys_user_grmember');
+        hrGR.addQuery('group.name', 'HR Manager');
+        hrGR.addJoinQuery('sys_user', 'user'); 
+        hrGR.addQuery('user.active', true);
+        hrGR.query();
+
+        if (hrGR.next()) {
+            var hrManagerSysId = hrGR.user.toString(); // Get sys_id of the HR manager
+            gs.info(`✅ No direct manager found. Assigning HR Manager: ${hrManagerSysId}`);
+            return hrManagerSysId;
+        }
+
+        gs.warn("⚠️ No HR Manager found. Returning empty approver.");
+        return "";
+    }
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 18:11:46</sys_created_on>
+        <sys_id>80986d8483bbd210df3bf629feaad3a9</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>GetHRManagers</sys_name>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_script_include_80986d8483bbd210df3bf629feaad3a9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-03 09:02:06</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>80986d8483bbd210df3bf629feaad3a9</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 18:11:45</sys_created_on>
+        <sys_id>5db8218483bbd210df3bf629feaad37d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-13 18:11:45</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <before>false</before>
+        <description/>
+        <name>data Conversion</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[var gr = new GlideRecord('x_1607066_leave_mn_leave_application'); // Replace with your table name
+gr.query();
+
+while (gr.next()) {
+    var approverName = gr.approver; // Current value (display name)
+    if (approverName) {
+        var userGR = new GlideRecord('sys_user');
+        userGR.addQuery('name', approverName); // Match by display name
+        userGR.query();
+        if (userGR.next()) {
+            gr.approver = userGR.sys_id; // Update to sys_id
+            gr.update();
+            gs.info(`Updated approver for record ${gr.sys_id}: ${approverName} -> ${userGR.sys_id}`);
+        } else {
+            gs.warn(`No matching user found for approver: ${approverName}`);
+        }
+    }
+}]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-03-03 09:04:34</sys_created_on>
+        <sys_id>ecf79cb5838c2210df3bf629feaad392</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>data Conversion</sys_name>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_script_fix_ecf79cb5838c2210df3bf629feaad392</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-03 09:04:34</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>ecf79cb5838c2210df3bf629feaad392</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-03-03 09:04:33</sys_created_on>
+        <sys_id>851858b5838c2210df3bf629feaad3b2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-03 09:04:33</sys_updated_on>
+        <table>sys_script_fix</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

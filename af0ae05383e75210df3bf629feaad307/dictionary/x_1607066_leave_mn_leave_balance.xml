@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="6d53fc1f832b5210df3bf629feaad374" label="Leave Balance" max_length="40" name="x_1607066_leave_mn_leave_balance" type="collection">
+        <element label="Taken" max_length="40" name="taken" type="integer"/>
+        <element label="Balance" max_length="40" name="balance" type="integer"/>
+        <element choice="2" label="Leave Type" max_length="40" name="leave_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Earned" value="earned"/>
+                <element inactive_on_update="false" label="Sick" value="sick"/>
+                <element inactive_on_update="false" label="Casual" value="casual"/>
+            </choice>
+        </element>
+        <element label="Accumulated" max_length="40" name="accumulated" type="integer"/>
+        <element label="Employee" max_length="32" name="employee" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="employee"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>leave_type</field>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Update Leave Balance on LeaveType Change</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || newValue == oldValue) {
+        return;
+    }
+
+    // Log to check if the Leave Type field is being changed
+    console.log('Leave Type changed to: ' + newValue);
+
+    // Get the employee's sys_id and the selected leave type
+    var employeeID = g_form.getValue('requested_by');
+    var leaveType = newValue;
+
+    // Log employee sys_id and leave type for debugging
+    console.log('Employee ID: ' + employeeID);
+    console.log('Leave Type: ' + leaveType);
+
+    // Call the Script Include using GlideAjax
+    var ga = new GlideAjax('LeaveBalanceFetcher');
+    ga.addParam('sysparm_name', 'getLeaveBalance');
+    ga.addParam('sys_id', employeeID); // Pass employee sys_id
+    ga.addParam('leave_type', leaveType); // Pass the selected leave type
+
+    // Debug log for AJAX call
+    console.log('Sending AJAX request to Script Include with params: ' + 'sys_id=' + employeeID + ', leave_type=' + leaveType);
+
+
+    ga.getXMLAnswer(function(response) {
+        console.log(response);
+        var result = JSON.parse(response);
+        console.log('Response from Script Include: ' + JSON.stringify(result));
+
+        if (result.error) {
+            // Show error message if no leave balance found
+            g_form.showFieldMsg('leave_type', result.error, 'error');
+        } else {
+            // Update the leave balance fields in the form
+            g_form.setValue('accumulated', result.accumulated);
+            g_form.setValue('taken_leave', result.taken);
+            g_form.setValue('balance', result.balance);
+        }
+    });
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 07:42:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a49717bb83ef9210df3bf629feaad394</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>Update Leave Balance on LeaveType Change</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_script_client_a49717bb83ef9210df3bf629feaad394</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-13 10:41:24</sys_updated_on>
+        <table>x_1607066_leave_mn_leave_application</table>
+        <type>onChange</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

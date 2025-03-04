@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="DELETE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1607066_leave_mn.UserManagerFetcher</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>UserManagerFetcher</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var UserManagerFetcher = Class.create();
+UserManagerFetcher.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    getManager: function() {
+        var userId = this.getParameter('sysparm_user_id'); // Get user ID passed from client script
+        var userGR = new GlideRecord('sys_user');
+
+        // Fetch user record based on the passed user ID
+        if (userGR.get(userId) && !userGR.manager.nil()) {
+            var managerSysId = userGR.manager.toString(); // Get the manager's sys_id
+            gs.info('Manager Sys ID for User ID ' + userId + ': ' + managerSysId); // Log the manager's sys_id
+            return managerSysId; // Return manager's sys_id
+        }
+
+        // If no manager found, log it and return an empty value
+        gs.info('No manager found for User ID ' + userId);
+        return "";
+    }
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 11:32:25</sys_created_on>
+        <sys_id>8dfc4cc883f3d210df3bf629feaad34a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>UserManagerFetcher</sys_name>
+        <sys_package display_value="Leave_Mng_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Leave_Mng_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_script_include_8dfc4cc883f3d210df3bf629feaad34a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-13 11:32:25</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="DELETE">
+        <id>8dfc4cc883f3d210df3bf629feaad34a</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 11:32:25</sys_created_on>
+        <sys_id>eb4d40c483f3d210df3bf629feaad379</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-13 11:32:25</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</application>
+        <file_path/>
+        <instance_id>8084afd01b91821078c7cb7b234bcb2d</instance_id>
+        <instance_name>dev250969</instance_name>
+        <name>sys_script_include_8dfc4cc883f3d210df3bf629feaad34a</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_include"&gt;&lt;sys_script_include action="INSERT_OR_UPDATE"&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;active&gt;true&lt;/active&gt;&lt;api_name&gt;x_1607066_leave_mn.UserManagerFetcher&lt;/api_name&gt;&lt;caller_access/&gt;&lt;client_callable&gt;true&lt;/client_callable&gt;&lt;description/&gt;&lt;mobile_callable&gt;false&lt;/mobile_callable&gt;&lt;name&gt;UserManagerFetcher&lt;/name&gt;&lt;sandbox_callable&gt;false&lt;/sandbox_callable&gt;&lt;script&gt;&lt;![CDATA[var UserManagerFetcher = Class.create();
+UserManagerFetcher.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    getManager: function() {
+        var userId = this.getParameter('sysparm_user_id'); // Get user ID passed from client script
+        var userGR = new GlideRecord('sys_user');
+
+        // Fetch user record based on the passed user ID
+        if (userGR.get(userId) &amp;&amp; !userGR.manager.nil()) {
+            var managerSysId = userGR.manager.toString(); // Get the manager's sys_id
+            gs.info('Manager Sys ID for User ID ' + userId + ': ' + managerSysId); // Log the manager's sys_id
+            return managerSysId; // Return manager's sys_id
+        }
+
+        // If no manager found, log it and return an empty value
+        gs.info('No manager found for User ID ' + userId);
+        return "";
+    }
+});]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_include&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-13 11:32:25&lt;/sys_created_on&gt;&lt;sys_id&gt;8dfc4cc883f3d210df3bf629feaad34a&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;UserManagerFetcher&lt;/sys_name&gt;&lt;sys_package display_value="Leave_Mng_App" source="x_1607066_leave_mn"&gt;af0ae05383e75210df3bf629feaad307&lt;/sys_package&gt;&lt;sys_policy&gt;read&lt;/sys_policy&gt;&lt;sys_scope display_value="Leave_Mng_App"&gt;af0ae05383e75210df3bf629feaad307&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_include_8dfc4cc883f3d210df3bf629feaad34a&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-13 11:32:25&lt;/sys_updated_on&gt;&lt;/sys_script_include&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;8dfc4cc883f3d210df3bf629feaad34a&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-13 11:32:25&lt;/sys_created_on&gt;&lt;sys_id&gt;eb4d40c483f3d210df3bf629feaad379&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-13 11:32:25&lt;/sys_updated_on&gt;&lt;table&gt;sys_script_include&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>173499196</payload_hash>
+        <record_name>UserManagerFetcher</record_name>
+        <reverted_from/>
+        <source>270aa4d3832b5210df3bf629feaad3b2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 11:32:27</sys_created_on>
+        <sys_id>845dc00c83f3d210df3bf629feaad396</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194ff14e64a0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-13 11:32:27</sys_updated_on>
+        <type>Script Include</type>
+        <update_guid>885dc00cbaf3d210be59143edc80a695</update_guid>
+        <update_guid_history>885dc00cbaf3d210be59143edc80a695:173499196</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 16:34:10</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_include">sys_script_include</sys_db_object>
+        <sys_id>0e653de3456b44619465fdd6a5f7bea1</sys_id>
+        <sys_metadata>8dfc4cc883f3d210df3bf629feaad34a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>UserManagerFetcher</sys_name>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_parent/>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_scope_delete display_value="">1bfc5398c9f74d888c56dc9744adcee1</sys_scope_delete>
+        <sys_update_name>sys_script_include_8dfc4cc883f3d210df3bf629feaad34a</sys_update_name>
+        <sys_update_version display_value="sys_script_include_8dfc4cc883f3d210df3bf629feaad34a">845dc00c83f3d210df3bf629feaad396</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-13 16:34:10</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section action="DELETE" caption="New Section" section_id="fc1bf78d833b5210df3bf629feaad323" sys_domain="global" table="x_1607066_leave_mn_leave_application" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>reason</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-02-17 07:25:12</sys_created_on>
+            <sys_id>c91b3b8d833b5210df3bf629feaad305</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="New Section" display_value="New Section" name="x_1607066_leave_mn_leave_application" sys_domain="global" view="Default view">fc1bf78d833b5210df3bf629feaad323</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-02-17 07:25:12</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="DELETE">
+            <caption>New Section</caption>
+            <header>false</header>
+            <name>x_1607066_leave_mn_leave_application</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2025-02-17 07:25:11</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>fc1bf78d833b5210df3bf629feaad323</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1607066_leave_mn_leave_application</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+            <sys_update_name>sys_ui_section_fc1bf78d833b5210df3bf629feaad323</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2025-02-17 07:25:11</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</application>
+        <file_path/>
+        <instance_id>8084afd01b91821078c7cb7b234bcb2d</instance_id>
+        <instance_name>dev250969</instance_name>
+        <name>sys_ui_section_fc1bf78d833b5210df3bf629feaad323</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_ui_section caption="New Section" section_id="fc1bf78d833b5210df3bf629feaad323" sys_domain="global" table="x_1607066_leave_mn_leave_application" version="3" view=""><sys_ui_element action="INSERT_OR_UPDATE"><element>reason</element><position>0</position><sys_created_by>admin</sys_created_by><sys_created_on>2025-02-17 07:25:12</sys_created_on><sys_id>c91b3b8d833b5210df3bf629feaad305</sys_id><sys_mod_count>0</sys_mod_count><sys_ui_formatter/><sys_ui_section caption="New Section" display_value="New Section" name="x_1607066_leave_mn_leave_application" sys_domain="global" view="Default view">fc1bf78d833b5210df3bf629feaad323</sys_ui_section><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-02-17 07:25:12</sys_updated_on><sys_user/><type/></sys_ui_element><sys_ui_section action="INSERT_OR_UPDATE"><caption>New Section</caption><header>false</header><name>x_1607066_leave_mn_leave_application</name><roles/><sys_class_name>sys_ui_section</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-02-17 07:25:11</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>fc1bf78d833b5210df3bf629feaad323</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1607066_leave_mn_leave_application</sys_name><sys_overrides/><sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package><sys_policy/><sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope><sys_update_name>sys_ui_section_fc1bf78d833b5210df3bf629feaad323</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-02-17 07:25:11</sys_updated_on><sys_user/><title>false</title><view display_value="Default view" name="NULL">Default view</view><view_name/></sys_ui_section></sys_ui_section></record_update>]]></payload>
+        <payload_hash>-523589669</payload_hash>
+        <record_name>Leave Application</record_name>
+        <reverted_from/>
+        <source>270aa4d3832b5210df3bf629feaad3b2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-17 07:25:12</sys_created_on>
+        <sys_id>491b3b8d833b5210df3bf629feaad307</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19512cbfaa90000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-17 07:25:12</sys_updated_on>
+        <type>Form Layout</type>
+        <update_guid>cd1b3b8d123b521040aa28edf9078306</update_guid>
+        <update_guid_history>cd1b3b8d123b521040aa28edf9078306:-523589669</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-17 07:27:17</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_section">sys_ui_section</sys_db_object>
+        <sys_id>12f93fea4df8494c9f7b30811493b764</sys_id>
+        <sys_metadata>fc1bf78d833b5210df3bf629feaad323</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New Section</sys_name>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_parent display_value="Leave Application">51513cdb832b5210df3bf629feaad3f7</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_scope_delete display_value="">1bfc5398c9f74d888c56dc9744adcee1</sys_scope_delete>
+        <sys_update_name>sys_ui_section_fc1bf78d833b5210df3bf629feaad323</sys_update_name>
+        <sys_update_version display_value="sys_ui_section_fc1bf78d833b5210df3bf629feaad323">491b3b8d833b5210df3bf629feaad307</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-17 07:27:17</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

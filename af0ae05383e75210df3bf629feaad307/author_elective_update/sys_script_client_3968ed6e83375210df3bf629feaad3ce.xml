@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="DELETE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>true</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Cancel Leave - Client Script</name>
+        <order/>
+        <script><![CDATA[function cancelLeave() {
+    var leaveID = g_form.getUniqueValue(); // Get the sys_id of the current record
+    var leaveType = g_form.getValue('leave_type');
+    var leaveDuration = g_form.getValue('leave_duration');
+
+    console.log('Cancel Leave Triggered for: ' + leaveID);
+    console.log('Leave Type: ' + leaveType);
+    console.log('Leave Duration: ' + leaveDuration);
+
+    var ga = new GlideAjax('CancelLeaveServer');
+    ga.addParam('sysparm_name', 'cancelLeaveRequest');
+    ga.addParam('sysparm_leave_id', leaveID);
+
+    ga.getXMLAnswer(function(response) {
+        console.log('Response from Server: ' + response);
+        
+        var result = JSON.parse(response);
+        if (result.success) {
+            g_form.clearMessages();
+            g_form.addInfoMessage('Leave request successfully cancelled.');
+            g_form.refresh(); // Refresh form to reflect changes
+        } else {
+            g_form.clearMessages();
+            g_form.addErrorMessage('Error: ' + result.error);
+        }
+    });
+}
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-21 12:36:46</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3968ed6e83375210df3bf629feaad3ce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Cancel Leave - Client Script</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_script_client_3968ed6e83375210df3bf629feaad3ce</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-21 12:36:46</sys_updated_on>
+        <table>x_1607066_leave_mn_leave_application</table>
+        <type/>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</application>
+        <file_path/>
+        <instance_id>8084afd01b91821078c7cb7b234bcb2d</instance_id>
+        <instance_name>dev250969</instance_name>
+        <name>sys_script_client_3968ed6e83375210df3bf629feaad3ce</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script_client"&gt;&lt;sys_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Cancel Leave - Client Script&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function cancelLeave() {
+    var leaveID = g_form.getUniqueValue(); // Get the sys_id of the current record
+    var leaveType = g_form.getValue('leave_type');
+    var leaveDuration = g_form.getValue('leave_duration');
+
+    console.log('Cancel Leave Triggered for: ' + leaveID);
+    console.log('Leave Type: ' + leaveType);
+    console.log('Leave Duration: ' + leaveDuration);
+
+    var ga = new GlideAjax('CancelLeaveServer');
+    ga.addParam('sysparm_name', 'cancelLeaveRequest');
+    ga.addParam('sysparm_leave_id', leaveID);
+
+    ga.getXMLAnswer(function(response) {
+        console.log('Response from Server: ' + response);
+        
+        var result = JSON.parse(response);
+        if (result.success) {
+            g_form.clearMessages();
+            g_form.addInfoMessage('Leave request successfully cancelled.');
+            g_form.refresh(); // Refresh form to reflect changes
+        } else {
+            g_form.clearMessages();
+            g_form.addErrorMessage('Error: ' + result.error);
+        }
+    });
+}
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-21 12:36:46&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;3968ed6e83375210df3bf629feaad3ce&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;Cancel Leave - Client Script&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn"&gt;af0ae05383e75210df3bf629feaad307&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Leave_Manage_App"&gt;af0ae05383e75210df3bf629feaad307&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_client_3968ed6e83375210df3bf629feaad3ce&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-21 12:36:46&lt;/sys_updated_on&gt;&lt;table&gt;x_1607066_leave_mn_leave_application&lt;/table&gt;&lt;type/&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;view/&gt;&lt;/sys_script_client&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-444960595</payload_hash>
+        <record_name>Cancel Leave - Client Script</record_name>
+        <reverted_from/>
+        <source>270aa4d3832b5210df3bf629feaad3b2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-21 12:36:46</sys_created_on>
+        <sys_id>94c8a5ae83375210df3bf629feaad379</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1952882aaf40000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-21 12:36:46</sys_updated_on>
+        <type>Client Script</type>
+        <update_guid>98c8a5aeb83752100b5a4673b505b878</update_guid>
+        <update_guid_history>98c8a5aeb83752100b5a4673b505b878:-444960595</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-21 12:39:04</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_client">sys_script_client</sys_db_object>
+        <sys_id>8ee16a4702ae446c83dd8fd6997c6a61</sys_id>
+        <sys_metadata>3968ed6e83375210df3bf629feaad3ce</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Cancel Leave - Client Script</sys_name>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_parent display_value="Leave Application">51513cdb832b5210df3bf629feaad3f7</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_scope_delete display_value="">1bfc5398c9f74d888c56dc9744adcee1</sys_scope_delete>
+        <sys_update_name>sys_script_client_3968ed6e83375210df3bf629feaad3ce</sys_update_name>
+        <sys_update_version display_value="sys_script_client_3968ed6e83375210df3bf629feaad3ce">94c8a5ae83375210df3bf629feaad379</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-21 12:39:04</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

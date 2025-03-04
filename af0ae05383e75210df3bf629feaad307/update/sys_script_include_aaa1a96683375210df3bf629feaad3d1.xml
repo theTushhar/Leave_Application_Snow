@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1607066_leave_mn.CancelLeaveServer</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>CancelLeaveServer</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var CancelLeaveServer = Class.create();
+CancelLeaveServer.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    cancelLeaveRequest: function() {
+        var leaveID = this.getParameter('sysparm_leave_id');
+
+        gs.info('Cancel Leave Request Received for: ' + leaveID);
+
+        var leaveRecord = new GlideRecord('x_1607066_leave_mn_leave_application');
+        if (leaveRecord.get(leaveID)) {
+            gs.info('Leave Record Found. Checking conditions...');
+            gs.info('Leave Status: ' + leaveRecord.status);
+            gs.info('Approval State: ' + leaveRecord.approval_state);
+
+            var today = new GlideDateTime();
+            if (leaveRecord.start_date < today) {
+                return JSON.stringify({ success: false, error: 'Cannot cancel past leaves' });
+            }
+
+            if (leaveRecord.approval_state == 'rejected') {
+                return JSON.stringify({ success: false, error: 'Cannot cancel a rejected leave request' });
+            }
+
+            // Handling "submitted" + "requested" case
+            if (leaveRecord.status == 'submitted' && leaveRecord.approval_state == 'requested') {
+                gs.info('Leave is under request. Cancelling and setting approval status to No longer required.');
+                leaveRecord.approval_state = 'No longer required';
+                leaveRecord.status = 'cancelled';
+                leaveRecord.update();
+
+                return JSON.stringify({ success: true });
+            }
+
+            // Handling "approved" case
+            if (leaveRecord.status == 'submitted' && leaveRecord.approval_state == 'approved') {
+                gs.info('Leave is approved. Cancelling and updating leave balance.');
+                leaveRecord.status = 'cancelled';
+                leaveRecord.update();
+
+                var leaveBalance = new GlideRecord('x_1607066_leave_mn_leave_balance');
+                leaveBalance.addQuery('employee', leaveRecord.requested_by);
+                leaveBalance.addQuery('leave_type', leaveRecord.leave_type);
+                leaveBalance.query();
+
+                if (leaveBalance.next()) {
+                    leaveBalance.taken -= leaveRecord.leave_duration;
+                    leaveBalance.balance += leaveRecord.leave_duration;
+                    leaveBalance.update();
+                    gs.info('Leave Balance Updated: New Balance = ' + leaveBalance.balance);
+                }
+
+                return JSON.stringify({ success: true });
+            }
+
+            return JSON.stringify({ success: false, error: 'Leave request cannot be cancelled in the current state' });
+        } else {
+            return JSON.stringify({ success: false, error: 'Leave record not found' });
+        }
+    }
+});
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-21 12:07:22</sys_created_on>
+        <sys_id>aaa1a96683375210df3bf629feaad3d1</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>CancelLeaveServer</sys_name>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_script_include_aaa1a96683375210df3bf629feaad3d1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-24 08:20:17</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>aaa1a96683375210df3bf629feaad3d1</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-21 12:07:22</sys_created_on>
+        <sys_id>d1022d2683375210df3bf629feaad369</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-21 12:07:22</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_1607066_leave_mn.LeaveBalanceFetcher</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <mobile_callable>false</mobile_callable>
+        <name>LeaveBalanceFetcher</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var LeaveBalanceFetcher = Class.create();
+LeaveBalanceFetcher.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+
+    getLeaveBalance: function() {
+        gs.info('Hello');
+
+        var employeeID = this.getParameter('sys_id');
+        var leaveType = this.getParameter('leave_type');
+        //    var employeeID = '6816f79cc0a8016401c5a33be04be441'; 
+        //    var leaveType = 'casual'; 
+        gs.info('Received parameters - employeeID: ' + employeeID + ', leaveType: ' + leaveType);
+
+        var leaveBalance = new GlideRecord('x_1607066_leave_mn_leave_balance');
+        leaveBalance.addQuery('employee', employeeID);
+        leaveBalance.addQuery('leave_type', leaveType);
+        leaveBalance.query();
+
+        if (leaveBalance.next()) {
+            const accumulated = leaveBalance.accumulated;
+            const taken = leaveBalance.taken;
+            const bal = leaveBalance.balance;
+            gs.info('Leave balance found - Accumulated: ' + accumulated + ', Taken: ' + taken + ', Remaining: ' + bal);
+            const balance = {
+                accumulated: Number(accumulated),
+                taken: Number(taken),
+                balance: Number(bal)
+            };
+            const res = JSON.stringify(balance);
+            gs.info(res);
+
+            return res;
+        } else {
+            gs.info('No leave balance found for employee: ' + employeeID + ' and leave type: ' + leaveType);
+            return JSON.stringify({
+                error: "No leave balance record found"
+            });
+        }
+    },
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 07:38:55</sys_created_on>
+        <sys_id>46c6577b83ef9210df3bf629feaad35d</sys_id>
+        <sys_mod_count>33</sys_mod_count>
+        <sys_name>LeaveBalanceFetcher</sys_name>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_script_include_46c6577b83ef9210df3bf629feaad35d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-13 10:41:16</sys_updated_on>
+    </sys_script_include>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>46c6577b83ef9210df3bf629feaad35d</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 07:38:54</sys_created_on>
+        <sys_id>07d717bb83ef9210df3bf629feaad399</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-13 07:38:54</sys_updated_on>
+        <table>sys_script_include</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

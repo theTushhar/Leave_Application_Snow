@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget">
+    <par_dashboard_widget action="INSERT_OR_UPDATE">
+        <canvas display_value="">97c52f6983882210df3bf629feaad3fd</canvas>
+        <component display_value="Filter">226449101138d0dff1abe0e1566c8b2a</component>
+        <component_props>{"filterId":"1ildb4vpnh6jhrks1l9","filterName":"Filter Based on Manager","filterComponentType":"multiselect","datasource":{"type":"table","payload":{"field":"approver","table":"x_1607066_leave_mn_leave_application","primaryKey":"sys_id"},"choices":[{"value":"","selected":false}]},"targets":[{"type":"table","payload":{"field":"approver","table":"x_1607066_leave_mn_leave_application","primaryKey":"sys_id"}}],"defaultSelectedItems":[],"cascadingConfig":{"filtersFollowing":[],"filterM2MConfigurations":[]},"defaultSelectedDateRange":{"range":""},"dateFilterView":"calendar-reldates","sort":"ASC","filterElementType":"pill","isShowSelectedValueInPill":true,"filterElementLayout":"vertical","enableClearFilter":true,"primaryActionLabel":"Apply","maxElements":500,"filterConfigurations":"@state.parFilters","cascadeScope":"17c52f6983882210df3bf629feaad3fa","isDashboard":true,"id":"defaultSelectedItems","value":[],"noDebounce":true,"propLabel":"Default values"}</component_props>
+        <h>5</h>
+        <name/>
+        <stored_component/>
+        <sys_class_name>par_dashboard_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-03-03 06:31:07</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>65f4f72d83c82210df3bf629feaad3ce</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name/>
+        <sys_overrides/>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>par_dashboard_widget_65f4f72d83c82210df3bf629feaad3ce</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-03 09:28:25</sys_updated_on>
+        <visualization/>
+        <w>10</w>
+        <widget_props/>
+        <x>15</x>
+        <y>8</y>
+    </par_dashboard_widget>
+</record_update>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1607066_leave_mn_leave_application</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_1607066_leave_mn_leave_application">status=submitted^approval_state=approved^EQ<item display_value="Submitted" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="submitted"/>
+            <item display_value="Approved" endquery="false" field="approval_state" goto="false" newquery="false" operator="=" or="false" value="approved"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>ReCalculate Leave Balance</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+    
+    gs.info("Leave balance update script started for user: " + current.requested_by);
+
+    var gr = new GlideRecord('x_1607066_leave_mn_leave_balance');
+    gr.addQuery('employee', current.requested_by);
+    gr.addQuery('leave_type', current.leave_type);
+    gr.query();
+
+    if (gr.next()) {
+        gs.info("Leave balance record found for employee: " + gr.employee + ", Leave Type: " + gr.leave_type);
+
+        if (gr.balance >= current.leave_duration) {
+            gs.info("Sufficient balance available. Deducting leave duration: " + current.leave_duration);
+
+            gr.balance -= current.leave_duration;
+            gr.taken += current.leave_duration;
+            gr.update();
+
+            gs.info("Leave balance updated successfully. New Balance: " + gr.balance + ", Taken: " + gr.taken);
+        } else {
+            gs.error("Insufficient leave balance for employee: " + gr.employee + ". Requested: " + current.leave_duration + ", Available: " + gr.balance);
+            gs.addErrorMessage("Insufficient leave balance. Request cannot be processed.");
+            current.setAbortAction(true);
+        }
+    } else {
+        gs.error("No leave balance record found for employee: " + current.requested_by);
+        gs.addErrorMessage("Leave balance record not found.");
+        current.setAbortAction(true);
+    }
+
+    gs.info("Leave balance update script execution completed.");
+
+})(current, previous);
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-17 09:32:05</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>762590dd83bb5210df3bf629feaad36f</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>ReCalculate Leave Balance</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_script_762590dd83bb5210df3bf629feaad36f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-17 11:00:26</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=762590dd83bb5210df3bf629feaad36f"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>762590dd83bb5210df3bf629feaad36f</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-17 09:32:04</sys_created_on>
+        <sys_id>eb1890dd83bb5210df3bf629feaad3b2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-17 09:32:04</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

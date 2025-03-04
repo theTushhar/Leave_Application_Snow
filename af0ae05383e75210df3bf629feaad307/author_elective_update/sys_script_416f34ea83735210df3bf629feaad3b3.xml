@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="DELETE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1607066_leave_mn_leave_application</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_1607066_leave_mn_leave_application">status=cancelled^EQ<item display_value="Cancelled" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="cancelled"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Restrict Past Leave Cancellation</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+    var today = new GlideDateTime();
+
+    // Restrict users from canceling past leave
+    if (current.start_date < today) {
+        gs.addErrorMessage('You cannot cancel past leave requests.');
+        current.setAbortAction(true);
+    }
+})(current, previous);
+
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-21 09:40:33</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>416f34ea83735210df3bf629feaad3b3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Restrict Past Leave Cancellation</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_script_416f34ea83735210df3bf629feaad3b3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-21 11:57:15</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="DELETE" query="documentkey=416f34ea83735210df3bf629feaad3b3"/>
+    <sys_es_latest_script action="DELETE">
+        <id>416f34ea83735210df3bf629feaad3b3</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-21 09:40:31</sys_created_on>
+        <sys_id>5e6081a283735210df3bf629feaad30f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-21 09:40:31</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</application>
+        <file_path/>
+        <instance_id>8084afd01b91821078c7cb7b234bcb2d</instance_id>
+        <instance_name>dev250969</instance_name>
+        <name>sys_script_416f34ea83735210df3bf629feaad3b3</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="sys_script"&gt;&lt;sys_script action="INSERT_OR_UPDATE"&gt;&lt;abort_action&gt;false&lt;/abort_action&gt;&lt;access&gt;package_private&lt;/access&gt;&lt;action_delete&gt;false&lt;/action_delete&gt;&lt;action_insert&gt;false&lt;/action_insert&gt;&lt;action_query&gt;false&lt;/action_query&gt;&lt;action_update&gt;true&lt;/action_update&gt;&lt;active&gt;true&lt;/active&gt;&lt;add_message&gt;false&lt;/add_message&gt;&lt;advanced&gt;true&lt;/advanced&gt;&lt;change_fields&gt;false&lt;/change_fields&gt;&lt;client_callable&gt;false&lt;/client_callable&gt;&lt;collection&gt;x_1607066_leave_mn_leave_application&lt;/collection&gt;&lt;condition/&gt;&lt;description/&gt;&lt;execute_function&gt;false&lt;/execute_function&gt;&lt;filter_condition table="x_1607066_leave_mn_leave_application"&gt;status=cancelled^EQ&lt;item display_value="Cancelled" endquery="false" field="status" goto="false" newquery="false" operator="=" or="false" value="cancelled"/&gt;&lt;item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/&gt;&lt;/filter_condition&gt;&lt;is_rest&gt;false&lt;/is_rest&gt;&lt;message/&gt;&lt;name&gt;Restrict Past Leave Cancellation&lt;/name&gt;&lt;order&gt;100&lt;/order&gt;&lt;priority&gt;100&lt;/priority&gt;&lt;rest_method/&gt;&lt;rest_method_text/&gt;&lt;rest_service/&gt;&lt;rest_service_text/&gt;&lt;rest_variables/&gt;&lt;role_conditions/&gt;&lt;script&gt;&lt;![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+    var today = new GlideDateTime();
+
+    // Restrict users from canceling past leave
+    if (current.start_date &lt; today) {
+        gs.addErrorMessage('You cannot cancel past leave requests.');
+        current.setAbortAction(true);
+    }
+})(current, previous);
+
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;sys_script&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-21 09:40:33&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;416f34ea83735210df3bf629feaad3b3&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;Restrict Past Leave Cancellation&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn"&gt;af0ae05383e75210df3bf629feaad307&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Leave_Manage_App"&gt;af0ae05383e75210df3bf629feaad307&lt;/sys_scope&gt;&lt;sys_update_name&gt;sys_script_416f34ea83735210df3bf629feaad3b3&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-21 11:57:15&lt;/sys_updated_on&gt;&lt;template/&gt;&lt;when&gt;before&lt;/when&gt;&lt;/sys_script&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=416f34ea83735210df3bf629feaad3b3"/&gt;&lt;sys_es_latest_script action="INSERT_OR_UPDATE"&gt;&lt;id&gt;416f34ea83735210df3bf629feaad3b3&lt;/id&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2025-02-21 09:40:31&lt;/sys_created_on&gt;&lt;sys_id&gt;5e6081a283735210df3bf629feaad30f&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2025-02-21 09:40:31&lt;/sys_updated_on&gt;&lt;table&gt;sys_script&lt;/table&gt;&lt;use_es_latest&gt;true&lt;/use_es_latest&gt;&lt;/sys_es_latest_script&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>2061441467</payload_hash>
+        <record_name>Restrict Past Leave Cancellation</record_name>
+        <reverted_from/>
+        <source>270aa4d3832b5210df3bf629feaad3b2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-21 11:57:15</sys_created_on>
+        <sys_id>9dbf5da283375210df3bf629feaad319</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>195285e7c260000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-21 11:57:15</sys_updated_on>
+        <type>Business Rule</type>
+        <update_guid>91bf5da2a537521001847a2456062219</update_guid>
+        <update_guid_history>91bf5da2a537521001847a2456062219:2061441467,3e60416eaf735210d7d315ff698804b7:135519449</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-21 12:22:28</sys_created_on>
+        <sys_db_object display_value="" name="sys_script">sys_script</sys_db_object>
+        <sys_id>a88ee5240c8e4585b448e3e72d7b85c1</sys_id>
+        <sys_metadata>416f34ea83735210df3bf629feaad3b3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Restrict Past Leave Cancellation</sys_name>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_parent display_value="Leave Application">51513cdb832b5210df3bf629feaad3f7</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_scope_delete display_value="">1bfc5398c9f74d888c56dc9744adcee1</sys_scope_delete>
+        <sys_update_name>sys_script_416f34ea83735210df3bf629feaad3b3</sys_update_name>
+        <sys_update_version display_value="sys_script_416f34ea83735210df3bf629feaad3b3">9dbf5da283375210df3bf629feaad319</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-21 12:22:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

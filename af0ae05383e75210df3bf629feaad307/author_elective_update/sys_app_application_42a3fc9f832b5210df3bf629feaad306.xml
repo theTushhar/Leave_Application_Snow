@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="DELETE">
+        <active>true</active>
+        <category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category>
+        <description/>
+        <device_type>browser</device_type>
+        <hint/>
+        <name>Leave Balance</name>
+        <order>100</order>
+        <roles>x_1607066_leave_mn.leave_balance_user</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-11 06:24:32</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>42a3fc9f832b5210df3bf629feaad306</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Leave Balance</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave_Mng_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Mng_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_app_application_42a3fc9f832b5210df3bf629feaad306</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-17 04:18:44</sys_updated_on>
+        <title>Leave Balance</title>
+        <view_name/>
+    </sys_app_application>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</application>
+        <file_path/>
+        <instance_id>8084afd01b91821078c7cb7b234bcb2d</instance_id>
+        <instance_name>dev250969</instance_name>
+        <name>sys_app_application_42a3fc9f832b5210df3bf629feaad306</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application"><sys_app_application action="INSERT_OR_UPDATE"><active>true</active><category display_value="Custom Applications">e0355b31ef303000a61d5a3615c0fb78</category><description/><device_type>browser</device_type><hint/><name>Leave Balance</name><order>100</order><roles>x_1607066_leave_mn.leave_balance_user</roles><sys_class_name>sys_app_application</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-02-11 06:24:32</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>42a3fc9f832b5210df3bf629feaad306</sys_id><sys_mod_count>2</sys_mod_count><sys_name>Leave Balance</sys_name><sys_overrides/><sys_package display_value="Leave_Mng_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package><sys_policy/><sys_scope display_value="Leave_Mng_App">af0ae05383e75210df3bf629feaad307</sys_scope><sys_update_name>sys_app_application_42a3fc9f832b5210df3bf629feaad306</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-02-17 04:18:44</sys_updated_on><title>Leave Balance</title><view_name/></sys_app_application></record_update>]]></payload>
+        <payload_hash>1223024844</payload_hash>
+        <record_name>Leave Balance</record_name>
+        <reverted_from/>
+        <source>270aa4d3832b5210df3bf629feaad3b2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-17 04:18:44</sys_created_on>
+        <sys_id>a16017c983775210df3bf629feaad3f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1951221413c0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-17 04:18:44</sys_updated_on>
+        <type>Application Menu</type>
+        <update_guid>696017c9567752106170c46fb6c902f7</update_guid>
+        <update_guid_history>696017c9567752106170c46fb6c902f7:1223024844,a6d6780946bb12106f4528511d6eda9f:1668723819,8ea3fc9fca2b52107241b2b58d24a107:1223024844</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Leave Balance">99d0530d83775210df3bf629feaad373</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-17 04:20:37</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_application">sys_app_application</sys_db_object>
+        <sys_id>91841833d32e42aca885a0af36213784</sys_id>
+        <sys_metadata>42a3fc9f832b5210df3bf629feaad306</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Leave Balance</sys_name>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_scope_delete display_value="">1bfc5398c9f74d888c56dc9744adcee1</sys_scope_delete>
+        <sys_update_name>sys_app_application_42a3fc9f832b5210df3bf629feaad306</sys_update_name>
+        <sys_update_version display_value="sys_app_application_42a3fc9f832b5210df3bf629feaad306">a16017c983775210df3bf629feaad3f8</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-17 04:20:37</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

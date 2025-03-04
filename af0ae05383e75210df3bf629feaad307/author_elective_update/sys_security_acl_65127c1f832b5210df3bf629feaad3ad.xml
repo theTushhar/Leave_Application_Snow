@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="DELETE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <applies_to/>
+        <condition/>
+        <decision_type>allow</decision_type>
+        <description>Default access control on x_1607066_leave_mn_employee</description>
+        <local_or_existing>Local</local_or_existing>
+        <name>x_1607066_leave_mn_employee</name>
+        <operation display_value="create">create</operation>
+        <script/>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-11 06:17:41</sys_created_on>
+        <sys_id>65127c1f832b5210df3bf629feaad3ad</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1607066_leave_mn_employee</sys_name>
+        <sys_package display_value="Leave_Mng_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Mng_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_security_acl_65127c1f832b5210df3bf629feaad3ad</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-11 06:17:41</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</application>
+        <file_path/>
+        <instance_id>8084afd01b91821078c7cb7b234bcb2d</instance_id>
+        <instance_name>dev250969</instance_name>
+        <name>sys_security_acl_65127c1f832b5210df3bf629feaad3ad</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl"><sys_security_acl action="INSERT_OR_UPDATE"><active>true</active><admin_overrides>true</admin_overrides><advanced>false</advanced><applies_to/><condition/><decision_type>allow</decision_type><description>Default access control on x_1607066_leave_mn_employee</description><local_or_existing>Local</local_or_existing><name>x_1607066_leave_mn_employee</name><operation display_value="create">create</operation><script/><security_attribute/><sys_class_name>sys_security_acl</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-02-11 06:17:41</sys_created_on><sys_id>65127c1f832b5210df3bf629feaad3ad</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1607066_leave_mn_employee</sys_name><sys_package display_value="Leave_Mng_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package><sys_policy/><sys_scope display_value="Leave_Mng_App">af0ae05383e75210df3bf629feaad307</sys_scope><sys_update_name>sys_security_acl_65127c1f832b5210df3bf629feaad3ad</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-02-11 06:17:41</sys_updated_on><type display_value="record">record</type></sys_security_acl></record_update>]]></payload>
+        <payload_hash>-574385138</payload_hash>
+        <record_name>x_1607066_leave_mn_employee</record_name>
+        <reverted_from/>
+        <source>270aa4d3832b5210df3bf629feaad3b2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-11 06:17:41</sys_created_on>
+        <sys_id>b1127c1f832b5210df3bf629feaad3bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194f3a801640000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-11 06:17:41</sys_updated_on>
+        <type>Access Control</type>
+        <update_guid>b5127c1f912b5210824adfb7e2fa92bc</update_guid>
+        <update_guid_history>b5127c1f912b5210824adfb7e2fa92bc:-574385138</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-12 05:29:18</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl">sys_security_acl</sys_db_object>
+        <sys_id>38beb447f9854be18ceb2d21d556e691</sys_id>
+        <sys_metadata>65127c1f832b5210df3bf629feaad3ad</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1607066_leave_mn_employee</sys_name>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_parent display_value="">71127c1f832b5210df3bf629feaad3d6</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_scope_delete display_value="">1bfc5398c9f74d888c56dc9744adcee1</sys_scope_delete>
+        <sys_update_name>sys_security_acl_65127c1f832b5210df3bf629feaad3ad</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_65127c1f832b5210df3bf629feaad3ad">b1127c1f832b5210df3bf629feaad3bd</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-12 05:29:18</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

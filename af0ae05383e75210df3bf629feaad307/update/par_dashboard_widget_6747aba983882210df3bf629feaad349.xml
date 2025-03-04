@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="par_dashboard_widget">
+    <par_dashboard_widget action="INSERT_OR_UPDATE">
+        <canvas display_value="">97c52f6983882210df3bf629feaad3fd</canvas>
+        <component display_value="Semi donut">3809c6583b8dd540a0bf735ed493bae2</component>
+        <component_props>{"selectedElements":[],"configVersion":"23.0.0-ci-SNAPSHOT","showDataLabels":true,"dataLabelsType":"both","truncationType":"end","showRegister":false,"registerPosition":"bottom","registerOrientation":"horizontal","showRegisterOnSameLine":false,"showRegisterValue":true,"legendHorizontalAlignment":"center","legendExpandToFit":false,"showRegisterPercentage":false,"colorConfig":{"type":"default"},"newReporting":false,"additionalGroupByConfig":[],"dataSources":[{"allowRealTime":true,"dataCategories":["group","simple","trend"],"filterQuery":"approval_state=approved^ORapproval_state=rejected^sys_created_onONLast month@javascript:gs.beginningOfLastMonth()@javascript:gs.endOfLastMonth()","id":"dGFibGV4XzE2MDcwNjZfbGVhdmVfbW5fbGVhdmVfYXBwbGljYXRpb24xNzQwOTc5NTQ3MzczMzgzNTI4NjYuOTU2NTEzMjQ=","isDatabaseView":false,"preferredVisualizations":["d24d53f60350de7a652caf3188a46ed2"],"sourceType":"table","tableOrViewName":"x_1607066_leave_mn_leave_application","label":"Leave Application"}],"showHeader":true,"showTotalAggregate":false,"showSubAggregate":false,"showFirstGroupAggregate":false,"showSecondGroupAggregate":false,"hideMatrixAggregate":false,"wrapTitle":false,"showHeaderSeparator":false,"contextMenuActions":[],"headerTitle":"Leave Approval Status Count","headingLevel":2,"showBorder":true,"bareBorder":false,"telemetry":"null","showDataPassthrough":false,"showAdditionalGroupBySelector":false,"dataPassthrough":null,"metrics":[{"aggregateFunction":"COUNT","axisId":"primary","dataSource":"dGFibGV4XzE2MDcwNjZfbGVhdmVfbW5fbGVhdmVfYXBwbGljYXRpb24xNzQwOTc5NTQ3MzczMzgzNTI4NjYuOTU2NTEzMjQ=","id":"ZEdGaWJHVjRYekUyTURjd05qWmZiR1ZoZG1WZmJXNWZiR1ZoZG1WZllYQndiR2xqWVhScGIyNHhOelF3T1RjNU5UUTNNemN6TXpnek5USTROall1T1RVMk5URXpNalE9MTc0MDk3OTU0NzM3NTM3NDc3OTcyLjc4NzQ4MzgwNA==","numberFormat":{"customFormat":false},"dateFormat":{"customFormat":false},"stringFormat":{"customFormat":false}}],"groupBy":[{"groupBy":[{"dataSource":"dGFibGV4XzE2MDcwNjZfbGVhdmVfbW5fbGVhdmVfYXBwbGljYXRpb24xNzQwOTc5NTQ3MzczMzgzNTI4NjYuOTU2NTEzMjQ=","groupByField":"approval_state","isRange":false,"isChoice":true,"isPaBucket":false}],"maxNumberOfGroups":12,"numberOfGroupsBasedOn":"NO_OF_GROUP_BASED_ON_PER_METRIC","showOthers":true,"disableRanges":false}],"sortBy":"value","sortByOrder":"desc","trendBy":null,"showChange":false,"showChangePercentage":false,"showTarget":false,"showForecast":false,"showForecastRange":false,"showTrend":false,"showConfidenceBand":false,"showGapPercentage":false,"showSparkline":false,"showMetricLabel":false,"showThreshold":false,"showComment":false,"showTotalValue":true,"followFilters":true,"showFilterIcon":false,"enableRealTimeUpdate":false,"enableDrilldown":true,"enableClickAndStay":false,"showDataTable":false,"enableCustomEmptyState":false,"componentId":"v1muwa6","emptyStateIllustration":"add-data","emptyStateHeading":"No data available.","emptyStateContent":"There are no scores available for the selected criteria. Contact your admin for more info.","emptyStateAlignment":"vertical-centered","refreshFrequency":null,"hideDevSettings":false,"configPropModifiers":{},"filterConfigurations":"@state.parFilters","showMaximumRange":false,"allowChangeDateRange":false,"showDateRangeByDefault":false,"applyDateRange":false,"numberOfPeriods":2,"showAbsolutePeriod":false,"scoreType":null,"showChangeFrom":"previous","period":"M","useDataCache":false,"cacheExpirationTime":0,"showCacheTime":true,"dateFormat":"default","showRefresh":true,"id":"showRegister","value":false,"noDebounce":true,"propLabel":"Show legend"}</component_props>
+        <h>14</h>
+        <name>Leave Approval Status</name>
+        <stored_component display_value="Leave Approval Status">106d907efd13653d3e9b6d048ea9839b</stored_component>
+        <sys_class_name>par_dashboard_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-03-03 05:31:28</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>6747aba983882210df3bf629feaad349</sys_id>
+        <sys_mod_count>11</sys_mod_count>
+        <sys_name>Leave Approval Status</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>par_dashboard_widget_6747aba983882210df3bf629feaad349</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-03 09:19:15</sys_updated_on>
+        <visualization/>
+        <w>15</w>
+        <widget_props/>
+        <x>0</x>
+        <y>3</y>
+    </par_dashboard_widget>
+</record_update>

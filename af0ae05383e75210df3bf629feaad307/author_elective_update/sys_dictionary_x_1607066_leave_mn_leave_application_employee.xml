@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_dictionary action="DELETE" element="employee" table="x_1607066_leave_mn_leave_application">
+        <active>true</active>
+        <array>false</array>
+        <attributes>edge_encryption_enabled=true</attributes>
+        <audit>false</audit>
+        <calculation/>
+        <choice>0</choice>
+        <choice_field/>
+        <choice_table/>
+        <column_label>Employee</column_label>
+        <comments/>
+        <create_roles/>
+        <default_value/>
+        <defaultsort/>
+        <delete_roles/>
+        <dependent/>
+        <dependent_on_field/>
+        <display>false</display>
+        <dynamic_creation>false</dynamic_creation>
+        <dynamic_creation_script/>
+        <dynamic_default_value/>
+        <dynamic_ref_qual/>
+        <element>employee</element>
+        <element_reference>false</element_reference>
+        <foreign_database/>
+        <formula/>
+        <function_definition/>
+        <function_field>false</function_field>
+        <internal_type display_value="Reference">reference</internal_type>
+        <mandatory>false</mandatory>
+        <max_length>40</max_length>
+        <name>x_1607066_leave_mn_leave_application</name>
+        <next_element/>
+        <primary>false</primary>
+        <read_only>false</read_only>
+        <read_roles/>
+        <reference display_value="" name="x_1607066_leave_mn_employee">x_1607066_leave_mn_employee</reference>
+        <reference_cascade_rule/>
+        <reference_floats>false</reference_floats>
+        <reference_key/>
+        <reference_qual/>
+        <reference_qual_condition/>
+        <reference_type/>
+        <spell_check>false</spell_check>
+        <staged>false</staged>
+        <sys_class_name>sys_dictionary</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-11 06:14:24</sys_created_on>
+        <sys_id>a1517cdb832b5210df3bf629feaad3ae</sys_id>
+        <sys_name>Employee</sys_name>
+        <sys_package display_value="Leave_Mng_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Mng_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_dictionary_x_1607066_leave_mn_leave_application_employee</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-11 06:22:23</sys_updated_on>
+        <table_reference>false</table_reference>
+        <text_index>false</text_index>
+        <unique>false</unique>
+        <use_dependent_field>false</use_dependent_field>
+        <use_dynamic_default>false</use_dynamic_default>
+        <use_reference_qualifier>simple</use_reference_qualifier>
+        <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
+        <widget/>
+        <write_roles/>
+        <xml_view>false</xml_view>
+    </sys_dictionary>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</application>
+        <file_path/>
+        <instance_id>8084afd01b91821078c7cb7b234bcb2d</instance_id>
+        <instance_name>dev250969</instance_name>
+        <name>sys_dictionary_x_1607066_leave_mn_leave_application_employee</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update><sys_dictionary action="INSERT_OR_UPDATE" element="employee" table="x_1607066_leave_mn_leave_application"><active>true</active><array>false</array><attributes>edge_encryption_enabled=true</attributes><audit>false</audit><calculation/><choice>0</choice><choice_field/><choice_table/><column_label>Employee</column_label><comments/><create_roles/><default_value/><defaultsort/><delete_roles/><dependent/><dependent_on_field/><display>false</display><dynamic_creation>false</dynamic_creation><dynamic_creation_script/><dynamic_default_value/><dynamic_ref_qual/><element>employee</element><element_reference>false</element_reference><foreign_database/><formula/><function_definition/><function_field>false</function_field><internal_type display_value="Reference">reference</internal_type><mandatory>false</mandatory><max_length>40</max_length><name>x_1607066_leave_mn_leave_application</name><next_element/><primary>false</primary><read_only>false</read_only><read_roles/><reference display_value="" name="x_1607066_leave_mn_employee">x_1607066_leave_mn_employee</reference><reference_cascade_rule/><reference_floats>false</reference_floats><reference_key/><reference_qual/><reference_qual_condition/><reference_type/><spell_check>false</spell_check><staged>false</staged><sys_class_name>sys_dictionary</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-02-11 06:14:24</sys_created_on><sys_id>a1517cdb832b5210df3bf629feaad3ae</sys_id><sys_name>Employee</sys_name><sys_package display_value="Leave_Mng_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package><sys_policy/><sys_scope display_value="Leave_Mng_App">af0ae05383e75210df3bf629feaad307</sys_scope><sys_update_name>sys_dictionary_x_1607066_leave_mn_leave_application_employee</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-02-11 06:22:23</sys_updated_on><table_reference>false</table_reference><text_index>false</text_index><unique>false</unique><use_dependent_field>false</use_dependent_field><use_dynamic_default>false</use_dynamic_default><use_reference_qualifier>simple</use_reference_qualifier><virtual>false</virtual><virtual_type>script</virtual_type><widget/><write_roles/><xml_view>false</xml_view></sys_dictionary></record_update>]]></payload>
+        <payload_hash>-188621139</payload_hash>
+        <record_name>Leave Application.Employee</record_name>
+        <reverted_from/>
+        <source>270aa4d3832b5210df3bf629feaad3b2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-11 06:22:23</sys_created_on>
+        <sys_id>a223349f832b5210df3bf629feaad36d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194f3ac50aa0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-11 06:22:23</sys_updated_on>
+        <type>Dictionary</type>
+        <update_guid>6a23349f192b521059836f9af38aab6c</update_guid>
+        <update_guid_history>6a23349f192b521059836f9af38aab6c:-188621139,2d517cdb6d2b52102a3ac1833af9f9bd:-1582838203</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-12 05:29:23</sys_created_on>
+        <sys_db_object display_value="" name="sys_dictionary">sys_dictionary</sys_db_object>
+        <sys_id>42b0bcea9e434cc8a084baa277b4e3f9</sys_id>
+        <sys_metadata>a1517cdb832b5210df3bf629feaad3ae</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Employee</sys_name>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_parent display_value="Leave Application">51513cdb832b5210df3bf629feaad3f7</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_scope_delete display_value="">1bfc5398c9f74d888c56dc9744adcee1</sys_scope_delete>
+        <sys_update_name>sys_dictionary_x_1607066_leave_mn_leave_application_employee</sys_update_name>
+        <sys_update_version display_value="sys_dictionary_x_1607066_leave_mn_leave_application_employee">a223349f832b5210df3bf629feaad36d</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-12 05:29:23</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

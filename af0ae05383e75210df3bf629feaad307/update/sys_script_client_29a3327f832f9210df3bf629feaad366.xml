@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field/>
+        <global>false</global>
+        <isolate_script>true</isolate_script>
+        <messages/>
+        <name>Auto-fill User and Approver</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+   // console.log("✅ onLoad triggered for Leave Request Form");
+
+    if (!g_form.isNewRecord()) {
+       // console.log("ℹ️ Existing record detected. Approver field remains unchanged.");
+        return; // Stop execution for existing records
+    }
+
+    var userId = g_user.userID;
+   // console.log(`]]>🔍<![CDATA[ Logged-in User ID: ${userId}`);
+
+    // Set "Requested By" field and make it read-only
+    g_form.setValue('requested_by', userId);
+    //g_form.setReadOnly('requested_by', true);
+   // console.log("✅ Requested By field set to logged-in user and made read-only.");
+
+    // Fetch Approver (Manager or HR Manager) only for new records
+    var ga = new GlideAjax('GetHRManagers');
+    ga.addParam('sysparm_name', 'getUserManagerOrHR');
+    ga.addParam('sysparm_user_id', userId);
+
+    ga.getXMLAnswer(function(response) {
+       // console.log("]]>🔍<![CDATA[ Response from GetHRManagers Script Include:", response);
+
+        if (response) {
+            g_form.setValue('approver', response); // Set sys_id (not display name)
+            //g_form.setReadOnly('approver', true); // Make read-only
+            console.log(`✅ Approver set to: ${response}`);
+        } else {
+           // console.warn("⚠️ No Manager or HR Manager found. Approver field remains empty.");
+        }
+    });
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 05:01:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>29a3327f832f9210df3bf629feaad366</sys_id>
+        <sys_mod_count>23</sys_mod_count>
+        <sys_name>Auto-fill User and Approver</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_script_client_29a3327f832f9210df3bf629feaad366</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-03-03 09:07:11</sys_updated_on>
+        <table>x_1607066_leave_mn_leave_application</table>
+        <type>onLoad</type>
+        <ui_type>10</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

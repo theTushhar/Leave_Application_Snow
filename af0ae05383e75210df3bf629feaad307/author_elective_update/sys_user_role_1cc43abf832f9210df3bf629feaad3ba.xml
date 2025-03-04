@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
+    <sys_user_role action="DELETE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description/>
+        <elevated_privilege>false</elevated_privilege>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_1607066_leave_mn.Employee</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>Employee</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 05:05:55</sys_created_on>
+        <sys_id>1cc43abf832f9210df3bf629feaad3ba</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1607066_leave_mn.Employee</sys_name>
+        <sys_package display_value="Leave_Mng_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Mng_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_user_role_1cc43abf832f9210df3bf629feaad3ba</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-13 05:05:55</sys_updated_on>
+    </sys_user_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</application>
+        <file_path/>
+        <instance_id>8084afd01b91821078c7cb7b234bcb2d</instance_id>
+        <instance_name>dev250969</instance_name>
+        <name>sys_user_role_1cc43abf832f9210df3bf629feaad3ba</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role"><sys_user_role action="INSERT_OR_UPDATE"><assignable_by/><can_delegate>true</can_delegate><description/><elevated_privilege>false</elevated_privilege><grantable>true</grantable><includes_roles/><name>x_1607066_leave_mn.Employee</name><scoped_admin>false</scoped_admin><suffix>Employee</suffix><sys_class_name>sys_user_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-02-13 05:05:55</sys_created_on><sys_id>1cc43abf832f9210df3bf629feaad3ba</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1607066_leave_mn.Employee</sys_name><sys_package display_value="Leave_Mng_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package><sys_policy/><sys_scope display_value="Leave_Mng_App">af0ae05383e75210df3bf629feaad307</sys_scope><sys_update_name>sys_user_role_1cc43abf832f9210df3bf629feaad3ba</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-02-13 05:05:55</sys_updated_on></sys_user_role></record_update>]]></payload>
+        <payload_hash>-1904325273</payload_hash>
+        <record_name>x_1607066_leave_mn.Employee</record_name>
+        <reverted_from/>
+        <source>270aa4d3832b5210df3bf629feaad3b2</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 05:05:55</sys_created_on>
+        <sys_id>c2d4babf832f9210df3bf629feaad3cf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194fdb305ab0000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-13 05:05:55</sys_updated_on>
+        <type>Role</type>
+        <update_guid>4ad4767ffb2f9210f3d154656d71a8b8</update_guid>
+        <update_guid_history>4ad4767ffb2f9210f3d154656d71a8b8:-1904325273</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_1607066_leave_mn.Employee">da253ebf832f9210df3bf629feaad309</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 05:07:20</sys_created_on>
+        <sys_db_object display_value="" name="sys_user_role">sys_user_role</sys_db_object>
+        <sys_id>91df371af6c3463bad5e45ca22236831</sys_id>
+        <sys_metadata>1cc43abf832f9210df3bf629feaad3ba</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1607066_leave_mn.Employee</sys_name>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_scope_delete display_value="">1bfc5398c9f74d888c56dc9744adcee1</sys_scope_delete>
+        <sys_update_name>sys_user_role_1cc43abf832f9210df3bf629feaad3ba</sys_update_name>
+        <sys_update_version display_value="sys_user_role_1cc43abf832f9210df3bf629feaad3ba">c2d4babf832f9210df3bf629feaad3cf</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-13 05:07:20</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>true</action_query>
+        <action_update>true</action_update>
+        <active>false</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_1607066_leave_mn_leave_application</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_1607066_leave_mn_leave_application">leave_typeCHANGESTOcasual^EQ<item display_value="Casual" endquery="false" field="leave_type" goto="false" newquery="false" operator="CHANGESTO" or="false" value="casual"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Fetch Employee Leave Balance</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+
+    // Get the employee's leave balance based on their user ID and leave type
+    var leaveBalance = new GlideRecord('u_leave_balance');
+    leaveBalance.addQuery('employee', current.requested_by);  // Get the employee's leave balance
+    leaveBalance.addQuery('leave_type', current.leave_type);  
+    leaveBalance.query();
+
+    if (leaveBalance.next()) {
+        // Fetch the details from the leave balance record
+        current.accumulated = leaveBalance.accumulated;  
+        current.taken_leave = leaveBalance.taken;                
+        current.balance = leaveBalance.balance;          
+
+        // Optionally, you can log the fetched data for debugging
+        gs.debug("Leave Balance Fetched: Accumulated=" + leaveBalance.accumulated + ", Taken=" + leaveBalance.taken + ", Remaining=" + leaveBalance.balance);
+    } else {
+        // If no matching leave balance record is found, log an error message
+        gs.addErrorMessage("Leave balance record not found for this employee and leave type.");
+    }
+
+})(current, previous);
+]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 07:17:41</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1eb0db7383ef9210df3bf629feaad333</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Fetch Employee Leave Balance</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_script_1eb0db7383ef9210df3bf629feaad333</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-13 07:37:31</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=1eb0db7383ef9210df3bf629feaad333"/>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>1eb0db7383ef9210df3bf629feaad333</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 07:17:38</sys_created_on>
+        <sys_id>e3f21f3383ef9210df3bf629feaad300</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-13 07:17:38</sys_updated_on>
+        <table>sys_script</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>

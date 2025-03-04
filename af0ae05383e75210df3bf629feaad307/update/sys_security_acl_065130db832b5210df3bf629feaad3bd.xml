@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>true</advanced>
+        <applies_to/>
+        <condition/>
+        <decision_type>allow</decision_type>
+        <description>Allow create for records in x_1607066_leave_mn_leave_application, for users with role admin, and if the ACL script returns true.</description>
+        <local_or_existing>Local</local_or_existing>
+        <name>x_1607066_leave_mn_leave_application</name>
+        <operation display_value="create">create</operation>
+        <script><![CDATA[// if (gs.hasRole('admin') || gs.hasRole('hr_manager')) {
+//     answer = true; // Admin & HR can create requests for others
+// } else if (gs.getUserID()) {
+//     answer = true; // Any logged-in user (employee) can create a request
+// } else {
+//     answer = false; // No access for others
+// }
+]]></script>
+        <security_attribute/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-11 06:14:26</sys_created_on>
+        <sys_id>065130db832b5210df3bf629feaad3bd</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>x_1607066_leave_mn_leave_application</sys_name>
+        <sys_package display_value="Leave_Manage_App" source="x_1607066_leave_mn">af0ae05383e75210df3bf629feaad307</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Leave_Manage_App">af0ae05383e75210df3bf629feaad307</sys_scope>
+        <sys_update_name>sys_security_acl_065130db832b5210df3bf629feaad3bd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-17 04:18:44</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+    <sys_es_latest_script action="INSERT_OR_UPDATE">
+        <id>065130db832b5210df3bf629feaad3bd</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-13 05:41:01</sys_created_on>
+        <sys_id>8cec323b836f9210df3bf629feaad32e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-13 05:41:01</sys_updated_on>
+        <table>sys_security_acl</table>
+        <use_es_latest>true</use_es_latest>
+    </sys_es_latest_script>
+</record_update>
